@@ -4,6 +4,7 @@ const { User, Domain } = require('../models');
 const { isLoggedIn } = require('./middlewares');
 
 const router = express.Router();
+const URL = 'http://localhost:8002/v2';
 
 router.get('/', async (req, res, next) => {
   try {
