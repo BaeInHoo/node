@@ -58,7 +58,7 @@ const upload = multer({
 router.post('/good', isLoggedIn, upload.single('img'), async (req, res, next) => {
   try {
     const { name, price } = req.body;
-    await Good.create({\
+    await Good.create({
       OwnerId: req.user.id,
       name,
       img: req.file.filename,
