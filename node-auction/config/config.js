@@ -14,14 +14,14 @@ const config = {
     },
     options: {
       encrypt: false,
-      datebase: process.env.DB_DEV_DATEBASE,
+      database: process.env.DB_DEV_DATABASE,
       trustServerCertificate: true,
     },
     authentication: {
       type: 'default',
       options: {
         userName: process.env.DB_DEV_USERNAME,
-        password: process.env.DB_DEV_PASSOWRD,
+        password: process.env.DB_DEV_PASSWORD,
       },
     },
   },

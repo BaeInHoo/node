@@ -1,6 +1,3 @@
-// import sql from 'mssql';
-// import { config } from './config.js';
-
 const sql = require('mssql');
 const { config } = require('./config');
 

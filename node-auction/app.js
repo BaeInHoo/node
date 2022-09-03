@@ -13,6 +13,8 @@ const authRouter = require('./routes/auth');
 const { sequelize } = require('./models');
 const { connPool } = require('./config/server');
 const passportConfig = require('./passport');
+const sse = require('./sse');
+const webSocket = require('./socket');
 
 const app = express();
 
@@ -69,6 +71,9 @@ app.use((err, req, res, next) => {
 
 connPool;
 
-app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기중');
 });
+
+webSocket(server, app);
+sse(server);
